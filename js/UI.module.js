@@ -20,26 +20,32 @@ export class UI {
 
         for (let i = 0; i < games.length; i++) {
             gamesViewList += `
-            <div class="col-lg-3 col-md-4 col-sm-6 my-3 ">
+            <div class="col-lg-3 col-sm-6 my-3 ">
                     <div gameId="${games[i].id}" class="game rounded-4 p-3 h-100">
                         <div class="gameImg">
                             <img src="${games[i].imgSrc}" class="w-100 rounded" alt="">
                         </div>
-                        <div class="gameInfo py-2 ">
-                            <div class="d-flex justify-content-between py-3">
-                                <h5 class="text-light">${games[i].title}</h5>
-                                <div class="price rounded-3 px-3 py-1">free</div>
+                        <div class="gameInfo py-2 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between py-3">
+                                    <h5 class="text-light">${games[i].title}</h5>
+                                    <div class="price rounded-3 px-3 py-1">free</div>
+                                </div>
+                                <p class="">${games[i].minDesc}</p>
                             </div>
-                            <p class="">${games[i].minDesc}</p>
+                            
 
-                            <hr style="color: white;">
-                            <div class="d-flex justify-content-between align-items-center position-relative bottom-0">
+                            <div>
+                                <hr style="color: white;">
+                                <div class="d-flex justify-content-between align-items-center position-relative bottom-0">
                                 <div class="category rounded-3 px-3 py-1 fw-bold">${games[i].category}</div>
                                 <div class="platform rounded-3 px-3 py-1 fw-bold">${games[i].platform}</div>
                             </div>
-                        </div>
+                         </div>
+                           
                     </div>
                 </div>
+            </div>
             `
         }
         document.getElementById('gamesRow').innerHTML = gamesViewList
