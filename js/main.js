@@ -27,8 +27,15 @@ $('.closeGameDetails').on('click', function () {
     `
 })
 
+let phoneNav = false
 $('#phoneSideNav').on('click', function () {
-    $('#sidenav').toggleClass("d-block");
+    if (phoneNav) {
+        $('#sidenav').fadeOut()
+        phoneNav = !phoneNav
+    } else {
+        $('#sidenav').fadeIn()
+        phoneNav = !phoneNav
+    }
 })
 
 
