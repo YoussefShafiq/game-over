@@ -8,7 +8,9 @@ $('.categoryOption').on('click', function () {
     ui.displayGames(this.innerHTML);
     $('.categoryOption').removeClass('active')
     $(this).addClass('active')
-
+    window.scrollTo({
+        top: 0,
+    });
 })
 
 
